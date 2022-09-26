@@ -16,12 +16,12 @@
   <meta name="author" content="Horizon">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Netty学习之NIO基础一、三大组件简介Channel与Buffer Java NIO系统的核心在于：通道(Channel)和缓冲区(Buffer)。通道表示打开到 IO 设备(例如：文件、套接字)的连接。若需要使用 NIO 系统，需要获取用于连接 IO 设备的通道以及用于容纳数据的缓冲区。然后操作缓冲区，对数据进行处理 简而言之，通道负责传输，缓冲区负责存储 常见的Channel有以下四种">
+    <meta name="description" content="Netty学习之NIO基础本博客是根据黑马程序员Netty实战学习时所做的笔记 可先参考博客[**Java NIO**](https:&#x2F;&#x2F;nyimac.gitee.io&#x2F;2020&#x2F;11&#x2F;30&#x2F;Java NIO&#x2F;) 一、三大组件简介Channel与Buffer Java NIO系统的核心在于：通道(Channel)和缓冲区(Buffer)。通道表示打开到 IO 设备(例如：文件、套接字)的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Horizon">
-<meta property="og:url" content="https://545932167.github.io/2022/09/26/Netty%E5%AD%A6%E4%B9%A0%E4%B9%8BNIO%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="NIO基础">
+<meta property="og:url" content="https://545932167.github.io/2022/09/26/NIO%20%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Horizon">
-<meta property="og:description" content="Netty学习之NIO基础一、三大组件简介Channel与Buffer Java NIO系统的核心在于：通道(Channel)和缓冲区(Buffer)。通道表示打开到 IO 设备(例如：文件、套接字)的连接。若需要使用 NIO 系统，需要获取用于连接 IO 设备的通道以及用于容纳数据的缓冲区。然后操作缓冲区，对数据进行处理 简而言之，通道负责传输，缓冲区负责存储 常见的Channel有以下四种">
+<meta property="og:description" content="Netty学习之NIO基础本博客是根据黑马程序员Netty实战学习时所做的笔记 可先参考博客[**Java NIO**](https:&#x2F;&#x2F;nyimac.gitee.io&#x2F;2020&#x2F;11&#x2F;30&#x2F;Java NIO&#x2F;) 一、三大组件简介Channel与Buffer Java NIO系统的核心在于：通道(Channel)和缓冲区(Buffer)。通道表示打开到 IO 设备(例如：文件、套接字)的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20210412135510.png">
 <meta property="og:image" content="https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20210418181918.png">
@@ -50,15 +50,15 @@
 <meta property="og:image" content="https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20210418162410.png">
 <meta property="og:image" content="https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20210418162750.png">
 <meta property="og:image" content="https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20210418163033.png">
-<meta property="article:published_time" content="2022-09-26T12:27:21.876Z">
-<meta property="article:modified_time" content="2022-09-26T12:39:07.128Z">
+<meta property="article:published_time" content="2022-09-26T12:56:08.000Z">
+<meta property="article:modified_time" content="2022-09-26T12:57:19.497Z">
 <meta property="article:author" content="Horizon">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://nyimapicture.oss-cn-beijing.aliyuncs.com/img/20210412135510.png">
   
   
   
-  <title>Horizon</title>
+  <title>NIO基础 - Horizon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -223,7 +223,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="NIO基础"></span>
           
         </div>
 
@@ -234,7 +234,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-26 20:27" pubdate>
+        <time datetime="2022-09-26 20:56" pubdate>
           September 26, 2022 pm
         </time>
       </span>
@@ -257,7 +257,7 @@
         
         
         
-          392 mins
+          393 mins
         
       </span>
     
@@ -295,14 +295,14 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">NIO基础</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<ul>
-<li><h1 id="Netty学习之NIO基础"><a href="#Netty学习之NIO基础" class="headerlink" title="Netty学习之NIO基础"></a>Netty学习之NIO基础</h1><h1 id="一、三大组件简介"><a href="#一、三大组件简介" class="headerlink" title="一、三大组件简介"></a>一、三大组件简介</h1><p>Channel与Buffer</p>
+                <h1 id="Netty学习之NIO基础"><a href="#Netty学习之NIO基础" class="headerlink" title="Netty学习之NIO基础"></a>Netty学习之NIO基础</h1><p>本博客是根据<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1py4y1E7oA?p=2"><strong>黑马程序员Netty实战</strong></a>学习时所做的笔记</p>
+<p>可先参考博客[**Java NIO**](<a target="_blank" rel="noopener" href="https://nyimac.gitee.io/2020/11/30/Java">https://nyimac.gitee.io/2020/11/30/Java</a> NIO&#x2F;)</p>
+<h1 id="一、三大组件简介"><a href="#一、三大组件简介" class="headerlink" title="一、三大组件简介"></a>一、三大组件简介</h1><p>Channel与Buffer</p>
 <p>Java NIO系统的<strong>核心</strong>在于：<strong>通道(Channel)和缓冲区(Buffer)<strong>。通道表示打开到 IO 设备(例如：文件、套接字)的连接。若需要使用 NIO 系统，需要获取用于</strong>连接 IO 设备的通道</strong>以及用于<strong>容纳数据的缓冲区</strong>。然后操作缓冲区，对数据进行处理</p>
 <p>简而言之，<strong>通道负责传输，缓冲区负责存储</strong></p>
 <p><strong>常见的Channel有以下四种</strong>，其中FileChannel主要用于文件传输，其余三种用于网络通信</p>
@@ -1037,9 +1037,6 @@
 <li>Linux 系统异步 IO 在 2.6 版本引入，但其<strong>底层实现还是用多路复用模拟了异步 IO，性能没有优势</strong></li>
 </ul>
 </blockquote>
-</li>
-</ul>
-</blockquote>
 
                 
               </div>
@@ -1057,8 +1054,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>https://545932167.github.io/2022/09/26/Netty学习之NIO基础/</div>
+      <div>NIO基础</div>
+      <div>https://545932167.github.io/2022/09/26/NIO 基础/</div>
     </div>
     <div class="license-meta">
       
@@ -1101,6 +1098,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/09/26/netty/" title="Netty">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Netty</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
